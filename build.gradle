@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.10'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id "com.google.protobuf" version "0.8.8"
+}
+
+group = 'com.ices'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'io.github.lognet:grpc-spring-boot-starter:3.4.3'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile group: 'com.ices.vac', name: 'vac-service', version: '0.0.100'
+
+	implementation 'io.grpc:grpc-netty-shaded:1.40.1'
+	implementation 'io.grpc:grpc-protobuf:1.40.1'
+//	implementation 'io.grpc:grpc-stub:1.40.1'
+	
+//	implementation 'io.grpc:grpc-netty-shaded'
+//	implementation "io.grpc:grpc-protobuf"
+//	implementation "io.grpc:grpc-stub"
+//	implementation "io.grpc:grpc-services"
+
+}
+
+test {
+	useJUnitPlatform()
+}
