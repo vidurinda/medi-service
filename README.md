@@ -1,4 +1,4 @@
-# medi-service
+# Intergrate gPRC with Spring Boot.
  Spring Boot & gRPC integration
  
  Getting started with gRPC
