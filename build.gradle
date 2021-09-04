@@ -29,17 +29,12 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	compile group: 'com.ices.vac', name: 'vac-service', version: '0.0.100'
+	compile group: 'com.ices.vac', name: 'vac-service', version: '0.0.102'
 
 	implementation 'io.grpc:grpc-netty-shaded:1.40.1'
 	implementation 'io.grpc:grpc-protobuf:1.40.1'
 //	implementation 'io.grpc:grpc-stub:1.40.1'
 	
-//	implementation 'io.grpc:grpc-netty-shaded'
-//	implementation "io.grpc:grpc-protobuf"
-//	implementation "io.grpc:grpc-stub"
-//	implementation "io.grpc:grpc-services"
-
 }
 
 test {

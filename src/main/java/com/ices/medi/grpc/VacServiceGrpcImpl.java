@@ -18,4 +18,26 @@ public class VacServiceGrpcImpl extends GreetingServiceGrpc.GreetingServiceImplB
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void greetMany(GreetingRequest request, StreamObserver<GreetingResponse> responseObserver) {
+
+        try{
+            for(int i= 0 ; i < 10 ;i++){
+                String result = "Hello " + request.getGreeting().getFirstName() + "This is " + i + "Greeting !";
+
+                GreetingResponse response = GreetingResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+                responseObserver.onNext(response);
+                Thread.sleep(2000);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            responseObserver.onCompleted();
+        }
+
+    }
 }
